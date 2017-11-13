@@ -1,3 +1,8 @@
+<?php
+
+require 'Class/Autoloader.php'; 
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
