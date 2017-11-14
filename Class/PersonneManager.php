@@ -1,11 +1,15 @@
 <?php
 
-require 'Autoloader.php'; 
-Autoloader::register();
-
 class PersonneManager {
-    
-    
-}
 
+    private $personne = [];
+
+    public function creerClient(){
+
+    }
+
+    public function creerConseiller(){
+
+    }
+}
 ?>
