@@ -1,7 +1,8 @@
 <?php
 
-//require 'Class/Autoloader.php'; 
-require 'Class/Personne.php';
+require 'Class/Autoloader.php';
+Autoloader::register(); 
+//require 'Class/Personne.php';
 
 ?>
 <!DOCTYPE html>
@@ -48,7 +49,7 @@ require 'Class/Personne.php';
                                     # code...
                                     ?>
                                 <tr class="text-center">
-                                <td><?=$value->getId();?></td>
+                                <td><a href=""><?=$value->getId();?></a></td>
                                 <td><?=$value->getPrenom();?></td>
                                 <td><?=$value->getNom();?></td>
                                 <td></td>
