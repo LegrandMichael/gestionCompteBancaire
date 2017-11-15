@@ -30,11 +30,13 @@ Autoloader::register();
                             <h4 class="modal-title">Création de compte</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="POST" role="form">
-                                <legend>Form title</legend>
+                            <form action="Class/Compte.php" method="POST" role="form">
+                                <legend>Créer un nouveau compte</legend>
                                 <div class="form-group">
-                                    <label for="">label</label>
-                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                    <label for="prenom">Prénom</label>
+                                    <input type="text" class="form-control" id="prenom" placeholder="Veuillez saisir le prénom">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" class="form-control" id="nom" placeholder="Veuillez saisir le nom">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
@@ -52,14 +54,21 @@ Autoloader::register();
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Modal title</h4>
+                            <h4 class="modal-title">Création d'un nouveau client</h4>
                         </div>
                         <div class="modal-body">
+                            <form action="" method="POST" role="form">
+                                <legend>Créer nouveau client</legend>
+                                <div class="form-group">
+                                    <label for="">label</label>
+                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Créer nouveau client</button>
+                            </form>
                             
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                         </div>
                     </div>
                 </div>
@@ -88,20 +97,51 @@ Autoloader::register();
                             //var_dump($persoTotal);
                                 foreach ( $persoTotal as $key => $value) {
                                     # code...
-                                    ?>
+                            ?>
                                 <tr class="text-center">
                                 <td><a href=""><?=$value->getId();?></a></td>
                                 <td><?=$value->getPrenom();?></td>
                                 <td><?=$value->getNom();?></td>
                                 <td></td>
                             <?php    
-                            }
+                                }
                             ?>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">N° de compte</th>
+                    <th class="text-center">Montant</th>
+                    <th class="text-center">Sens</th>
+                    <th class="text-center">Commentaire</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    $ope1=new Operation (1255, "Crédit", "Virement SARL Dubois");
+                    $ope2=new Operation (445, "Débit","DGFIP");
+                    $opeTotal = [$ope1,$ope2];
+                    foreach ($opeTotal as $key => $value) {
+                        
+                ?>
+                <tr class="text-center">
+                    <td><?=$perso1->getId();?></td>
+                    <td><?=$value->getMontant();?></td>
+                    <td><?=$value->getSens();?></td>
+                    <td><?=$value->getCommentaire();?></td>
+                <?php
+                    }
+                ?>    
+                </tr>
+            </tbody>
+        </table>
+        
     </div>
     <!-- Latest compiled and minified JS -->
     <script src="//code.jquery.com/jquery.js"></script>
